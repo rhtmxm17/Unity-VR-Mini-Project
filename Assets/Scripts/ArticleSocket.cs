@@ -5,7 +5,7 @@ using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.XR.Interaction.Toolkit;
 
-public class ArticleSocket : MonoBehaviour
+public abstract class ArticleSocket : MonoBehaviour
 {
     public List<Vector3> EnableAxis;
 
@@ -35,16 +35,18 @@ public class ArticleSocket : MonoBehaviour
 
     private XRSocketInteractor socketInteractor;
     private Coroutine updateAttachRoutine;
-    private Transform socketAttach;
-    private int attachAxisIndex = 0;
     private InteractableArticle selectedArticle;
 
-    private void Awake()
+    // 소켓 Attach 로직에서 사용되야 할 정보
+    protected Transform socketAttach;
+    protected int attachAxisIndex = 0;
+
+    protected virtual void Awake()
     {
         socketInteractor = GetComponent<XRSocketInteractor>();
     }
 
-    private void Start()
+    protected virtual void Start()
     {
         // 소켓에 놓을 방향 설정 관련
         socketInteractor.hoverEntered.AddListener(EnterUpdateAttach);
@@ -56,6 +58,11 @@ public class ArticleSocket : MonoBehaviour
         socketInteractor.selectEntered.AddListener(OnSelectEntered);
         socketInteractor.selectExited.AddListener(OnSelectExited);
 
+        // 디버깅
+        socketInteractor.selectEntered.AddListener(_ =>
+        {
+            Debug.Log($"감지된 축: {attachAxisIndex}");
+        });
     }
 
 
@@ -94,26 +101,12 @@ public class ArticleSocket : MonoBehaviour
 
         while (true)
         {
-            // EnableAxis는 여러개고 상호작용 대상은 하나이므로 상호작용 대상을 소켓의 로컬 공간으로 가져와서 계산한다
-            Vector3 interactableForwardInSocketSpace = transform.InverseTransformDirection(grabInteractable.transform.forward);
-            float maxSimilarity = -1f;
-
-            for (int i = 0; i < EnableAxis.Count; i++)
-            {
-                // 유사성은 사잇각이 가장 작은 것(방향 벡터의 Dot이 최대값에 가까운 것)으로 판단
-                float similarity = Vector3.Dot(interactableForwardInSocketSpace, EnableAxis[i]);
-                if (maxSimilarity < similarity)
-                {
-                    maxSimilarity = similarity;
-                    attachAxisIndex = i;
-                }
-            }
-            
-            socketAttach.forward = transform.TransformDirection(EnableAxis[attachAxisIndex]);
-
+            AttachRotation(grabInteractable.transform);
             yield return updatePeriod;
         }
     }
+
+    protected abstract void AttachRotation(Transform article);
 
     private void OnSelectEntered(SelectEnterEventArgs args)
     {

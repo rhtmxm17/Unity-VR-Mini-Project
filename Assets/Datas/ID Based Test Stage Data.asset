@@ -22,14 +22,14 @@ MonoBehaviour:
       position: {x: 1, y: 0, z: 2}
       rotation: {x: 0, y: 0, z: 0, w: 0}
   socketDatas:
-  - prefab: {fileID: 3554061846070341864, guid: 31771998eddcafc4dad03692fafaf100, type: 3}
+  - prefab: {fileID: 6086481593431913906, guid: 31771998eddcafc4dad03692fafaf100, type: 3}
     pose:
       position: {x: -1, y: 0, z: 4}
       rotation: {x: 0, y: 0, z: 0, w: 0}
     id: 1
     axis: -1
     state: -1
-  - prefab: {fileID: 3554061846070341864, guid: 31771998eddcafc4dad03692fafaf100, type: 3}
+  - prefab: {fileID: 6086481593431913906, guid: 31771998eddcafc4dad03692fafaf100, type: 3}
     pose:
       position: {x: 1, y: 0, z: 4}
       rotation: {x: 0, y: 0, z: 0, w: 0}
