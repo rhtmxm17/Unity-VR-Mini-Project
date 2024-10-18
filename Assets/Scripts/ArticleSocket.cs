@@ -24,18 +24,19 @@ public class ArticleSocket : MonoBehaviour
         }
     }
 
+    public event UnityAction<SelectedChangedEventArgs> OnSelectedChanged;
+
     public struct SelectedChangedEventArgs
     {
         public int selectedAxisIndex;
         public int articleId;
         public int articleState;
     }
-    public event UnityAction<SelectedChangedEventArgs> OnSelectedChanged;
 
     private XRSocketInteractor socketInteractor;
     private Coroutine updateAttachRoutine;
     private Transform socketAttach;
-    private int attachAxisIndex;
+    private int attachAxisIndex = 0;
     private InteractableArticle selectedArticle;
 
     private void Awake()
@@ -54,6 +55,7 @@ public class ArticleSocket : MonoBehaviour
         // 소켓에 놓인 기물 정보 관련
         socketInteractor.selectEntered.AddListener(OnSelectEntered);
         socketInteractor.selectExited.AddListener(OnSelectExited);
+
     }
 
 
