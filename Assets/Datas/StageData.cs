@@ -18,18 +18,10 @@ public class StageData : ScriptableObject
     [System.Serializable]
     public struct SocketData
     {
-        [System.Serializable]
-        public struct CheckInt
-        {
-            public bool check;
-            [ShowIf("check")]
-            public int value;
-        }
-
         public ArticleSocket prefab;
         public Pose pose;
-        public CheckInt id;
-        public CheckInt axis;
-        public CheckInt state;
+        public Stage.Answer id;
+        public Stage.Answer axis;
+        public Stage.Answer state;
     }
 }

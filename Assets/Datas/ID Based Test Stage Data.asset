@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f1f1872ce3af06640b1d23774b694673, type: 3}
-  m_Name: Test Stage Data
+  m_Name: ID Based Test Stage Data
   m_EditorClassIdentifier: 
   articleDatas:
   - prefab: {fileID: 5253113257569709865, guid: e29d5532b74a05644be65e6d7359feb7, type: 3}
@@ -26,25 +26,13 @@ MonoBehaviour:
     pose:
       position: {x: -1, y: 0, z: 4}
       rotation: {x: 0, y: 0, z: 0, w: 0}
-    id:
-      check: 1
-      value: 0
-    axis:
-      check: 0
-      value: 0
-    state:
-      check: 0
-      value: 0
+    id: 1
+    axis: -1
+    state: -1
   - prefab: {fileID: 3554061846070341864, guid: 31771998eddcafc4dad03692fafaf100, type: 3}
     pose:
       position: {x: 1, y: 0, z: 4}
       rotation: {x: 0, y: 0, z: 0, w: 0}
-    id:
-      check: 1
-      value: 1
-    axis:
-      check: 0
-      value: 0
-    state:
-      check: 0
-      value: 0
+    id: 2
+    axis: -1
+    state: -1

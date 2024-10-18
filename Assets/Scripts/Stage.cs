@@ -3,10 +3,41 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
+public static partial class Extension
+{
+    public static Stage.Answer GetAnswerFlag(this int i)
+    {
+        return (Stage.Answer)(1 << i);
+    }
+}
+
 public class Stage : MonoBehaviour
 {
     public StageData data;
     public UnityEvent OnClear;
+
+    [System.Flags]
+    public enum Answer : int
+    {
+        _0 = 1 << 0,
+        _1 = 1 << 1,
+        _2 = 1 << 2,
+        _3 = 1 << 3,
+        _4 = 1 << 4,
+        _5 = 1 << 5,
+        _6 = 1 << 6,
+        _7 = 1 << 7,
+        _8 = 1 << 8,
+        _9 = 1 << 9,
+        _10 = 1 << 10,
+        _11 = 1 << 11,
+        _12 = 1 << 12,
+        _13 = 1 << 13,
+        _14 = 1 << 14,
+        _15 = 1 << 15,
+
+        Undef = 1 << -1, // 1 << 31, 실제 사용은 고려하지 않음, Everything 및 디버깅용
+    }
 
     private SocketAnswerChecker[] checkers;
 
@@ -16,15 +47,15 @@ public class Stage : MonoBehaviour
 
         public event UnityAction OnChecked;
 
-        public int id = -1;
-        public int axis = -1;
-        public int state = -1;
+        public Answer id;
+        public Answer axis;
+        public Answer state;
 
         public void CheckAnswer(ArticleSocket.SelectedChangedEventArgs args)
         {
-            IsCorrect = (id < 0 || id == args.articleId) &&
-                (axis < 0 || axis == args.selectedAxisIndex) &&
-                (state < 0 || state == args.articleState);
+            IsCorrect = (id < 0 || id.HasFlag(args.articleId.GetAnswerFlag())) &&
+                (axis < 0 || axis.HasFlag(args.selectedAxisIndex.GetAnswerFlag())) &&
+                (state < 0 || state.HasFlag(args.articleState.GetAnswerFlag()));
 
             OnChecked?.Invoke();
         }
@@ -58,13 +89,12 @@ public class Stage : MonoBehaviour
             var socket = Instantiate(data.socketDatas[i].prefab, this.transform);
             socket.transform.SetLocalPositionAndRotation(data.socketDatas[i].pose.position, data.socketDatas[i].pose.rotation);
 
-            checkers[i] = new();
-            if (data.socketDatas[i].id.check)
-                checkers[i].id = data.socketDatas[i].id.value;
-            if (data.socketDatas[i].axis.check)
-                checkers[i].axis = data.socketDatas[i].axis.value;
-            if (data.socketDatas[i].state.check)
-                checkers[i].state = data.socketDatas[i].state.value;
+            checkers[i] = new()
+            {
+                id = data.socketDatas[i].id,
+                axis = data.socketDatas[i].axis,
+                state = data.socketDatas[i].state
+            };
 
             socket.OnSelectedChanged += checkers[i].CheckAnswer;
             checkers[i].OnChecked += CheckClear;
