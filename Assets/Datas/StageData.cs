@@ -20,8 +20,7 @@ public class StageData : ScriptableObject
     {
         public ArticleSocket prefab;
         public Pose pose;
-        public Stage.Answer id;
-        public Stage.Answer axis;
-        public Stage.Answer state;
+
+        public Stage.SolutionSet solution;
     }
 }
