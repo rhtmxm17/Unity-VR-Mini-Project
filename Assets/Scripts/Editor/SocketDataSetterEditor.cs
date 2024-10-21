@@ -3,13 +3,13 @@ using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
 
-[CustomEditor(typeof(ArticleSocket), true)]
+[CustomEditor(typeof(SocketDataSetter))]
 [CanEditMultipleObjects]
-public class ArticleSocketEditor : Editor
+public class SocketDataSetterEditor : Editor
 {
     public override void OnInspectorGUI()
     {
         base.OnInspectorGUI();
-        EditorGUILayout.LabelField("CustomEditor Test");
+        EditorGUILayout.LabelField("Solution Articles가 비어있다면 검사하지 않음");
     }
 }

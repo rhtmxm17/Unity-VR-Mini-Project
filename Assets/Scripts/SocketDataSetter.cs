@@ -8,7 +8,7 @@ public class SocketDataSetter : MonoBehaviour
 {
     public List<InteractableArticle> solutionArticles;
     public Solution solutionAxis = (Solution)~0;
-    public Solution solutionStage = (Solution)~0;
+    public Solution solutionState = (Solution)~0;
 
     private void Start()
     {
