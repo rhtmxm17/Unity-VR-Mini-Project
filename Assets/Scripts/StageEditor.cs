@@ -80,21 +80,64 @@ public class StageEditor : MonoBehaviour
     {
         if (stageData == null)
         {
-            Debug.LogWarning("스테이지 데이터가 선택되지 않음");
+            Debug.LogWarning("스테이지 데이터가 선택되지 않았습니다.");
             return;
         }
 
-        Debug.LogError("TODO: 스테이지 편집 툴 형식에 맞게 불러오기");
+        if ((0 != FindObjectsByType(typeof(ArticleSocket), FindObjectsSortMode.None).Length) ||
+            (0 != FindObjectsByType(typeof(InteractableArticle), FindObjectsSortMode.None).Length))
+        {
+            Debug.LogWarning("씬에 소켓 또는 기물이 존재합니다.");
+            return;
+        }
+
+        // 기물 생성
+        InteractableArticle[] articles = new InteractableArticle[stageData.articleDatas.Length];
+        for (int i = 0; i < stageData.articleDatas.Length; i++)
+        {
+            articles[i] = (InteractableArticle)PrefabUtility.InstantiatePrefab(stageData.articleDatas[i].prefab);
+            articles[i].transform.SetPositionAndRotation(stageData.articleDatas[i].pose.position, stageData.articleDatas[i].pose.rotation);
+        }
+
+        // 소켓 생성 및 정답 정보 입력
+        for (int i = 0; i < stageData.socketDatas.Length; i++)
+        {
+            var socket = (ArticleSocket)PrefabUtility.InstantiatePrefab(stageData.socketDatas[i].prefab);
+            socket.transform.SetPositionAndRotation(stageData.socketDatas[i].pose.position, stageData.socketDatas[i].pose.rotation);
+            var dataSetter = socket.gameObject.AddComponent<SocketDataSetter>();
+
+            dataSetter.solutionAxis = stageData.socketDatas[i].solution.axis;
+            dataSetter.solutionState = stageData.socketDatas[i].solution.state;
+
+            // 정답 기물 목록은 id를 참조로 변환해서 불러오기
+            dataSetter.solutionArticles = new();
+            if (stageData.socketDatas[i].solution.id != (Stage.Solution)~0)
+            {
+                for (int id = 0; id < stageData.articleDatas.Length; id++)
+                {
+                    if (stageData.socketDatas[i].solution.id.HasFlag(id.GetAnswerFlag()))
+                    {
+                        dataSetter.solutionArticles.Add(articles[id]);
+                    }
+                }
+            }
+        }
     }
 
     private void OnEnable()
     {
+        if (Application.isPlaying)
+            return;
+
         Debug.Log("StageEditor 시작");
         EditorApplication.hierarchyChanged += AddDataSetter;
     }
 
     private void OnDisable()
     {
+        if (Application.isPlaying)
+            return;
+
         Debug.Log("StageEditor 정지");
         EditorApplication.hierarchyChanged -= AddDataSetter;
     }

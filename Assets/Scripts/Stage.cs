@@ -37,6 +37,7 @@ public class Stage : MonoBehaviour
         _15 = 1 << 15,
 
         Undef = 1 << -1, // 1 << 31, 실제 사용은 고려하지 않음, Everything 및 디버깅용
+        //Everything = ~0
     }
 
     [System.Serializable]

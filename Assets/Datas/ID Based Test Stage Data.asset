@@ -26,21 +26,15 @@ MonoBehaviour:
     pose:
       position: {x: -1, y: 0, z: 4}
       rotation: {x: 0, y: 0, z: 0, w: 0}
-    answer:
+    solution:
       id: 1
-      axis: 0
-      state: 0
-    id: 1
-    axis: -1
-    state: -1
+      axis: -1
+      state: -1
   - prefab: {fileID: 6086481593431913906, guid: 31771998eddcafc4dad03692fafaf100, type: 3}
     pose:
       position: {x: 1, y: 0, z: 4}
       rotation: {x: 0, y: 0, z: 0, w: 0}
-    answer:
+    solution:
       id: 2
-      axis: 0
-      state: 0
-    id: 2
-    axis: -1
-    state: -1
+      axis: -1
+      state: -1
