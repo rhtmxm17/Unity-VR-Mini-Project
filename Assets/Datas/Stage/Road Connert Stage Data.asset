@@ -15,16 +15,20 @@ MonoBehaviour:
   articleDatas:
   - prefab: {fileID: 8505988935184008798, guid: e2e10cfb24078da48919759fc9c95207, type: 3}
     pose:
-      position: {x: 1, y: 0, z: 1}
-      rotation: {x: 0, y: 0.6087614, z: 0, w: 0.7933533}
+      position: {x: -0.046, y: 0, z: 0.857}
+      rotation: {x: -0, y: 0.8455066, z: -0, w: 0.53396505}
   - prefab: {fileID: 8505988935184008798, guid: e2e10cfb24078da48919759fc9c95207, type: 3}
     pose:
       position: {x: -1, y: 0, z: 1}
       rotation: {x: 0, y: 0.1305262, z: 0, w: 0.9914449}
+  - prefab: {fileID: 8505988935184008798, guid: e2e10cfb24078da48919759fc9c95207, type: 3}
+    pose:
+      position: {x: 1, y: 0, z: 1}
+      rotation: {x: 0, y: 0.6087614, z: 0, w: 0.7933533}
   socketDatas:
   - prefab: {fileID: 6086481593431913906, guid: 31771998eddcafc4dad03692fafaf100, type: 3}
     pose:
-      position: {x: 0.5, y: 0, z: 3}
+      position: {x: 0.5, y: 0, z: 2}
       rotation: {x: 0, y: 0, z: 0, w: 1}
     solution:
       id: -1
@@ -32,9 +36,18 @@ MonoBehaviour:
       state: -1
   - prefab: {fileID: 6086481593431913906, guid: 31771998eddcafc4dad03692fafaf100, type: 3}
     pose:
-      position: {x: -0.5, y: 0, z: 3}
+      position: {x: -0.5, y: 0, z: 2}
       rotation: {x: 0, y: 0, z: 0, w: 1}
     solution:
       id: -1
       axis: 9
       state: -1
+  - prefab: {fileID: 6086481593431913906, guid: 31771998eddcafc4dad03692fafaf100, type: 3}
+    pose:
+      position: {x: 0, y: 0, z: 2}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+    solution:
+      id: -1
+      axis: 9
+      state: -1
+  clueDatas: []

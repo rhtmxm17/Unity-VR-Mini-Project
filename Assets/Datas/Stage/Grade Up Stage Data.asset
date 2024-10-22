@@ -13,28 +13,49 @@ MonoBehaviour:
   m_Name: Grade Up Stage Data
   m_EditorClassIdentifier: 
   articleDatas:
-  - prefab: {fileID: 5253113257569709865, guid: e29d5532b74a05644be65e6d7359feb7, type: 3}
+  - prefab: {fileID: 5253113257569709865, guid: cbc54b4d7c8400c40b3499f6067a5fd4, type: 3}
     pose:
-      position: {x: -1, y: 0, z: 2}
+      position: {x: 0, y: 0, z: 1}
       rotation: {x: 0, y: 0, z: 0, w: 1}
   - prefab: {fileID: 1701156773660306021, guid: 49db46b88e5661e48a9d3f42bf398301, type: 3}
     pose:
-      position: {x: 1, y: 0, z: 2}
-      rotation: {x: 0, y: 0, z: 0, w: 0}
+      position: {x: 1, y: 0, z: 1}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+  - prefab: {fileID: 5253113257569709865, guid: e29d5532b74a05644be65e6d7359feb7, type: 3}
+    pose:
+      position: {x: -1, y: 0, z: 1}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
   socketDatas:
   - prefab: {fileID: 6086481593431913906, guid: 31771998eddcafc4dad03692fafaf100, type: 3}
     pose:
-      position: {x: -1, y: 0, z: 4}
-      rotation: {x: 0, y: 0, z: 0, w: 0}
+      position: {x: 0, y: 0, z: 2}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+    solution:
+      id: 2
+      axis: -1
+      state: -1
+  - prefab: {fileID: 6086481593431913906, guid: 31771998eddcafc4dad03692fafaf100, type: 3}
+    pose:
+      position: {x: 1, y: 0, z: 2}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
     solution:
       id: 1
       axis: -1
       state: -1
   - prefab: {fileID: 6086481593431913906, guid: 31771998eddcafc4dad03692fafaf100, type: 3}
     pose:
-      position: {x: 1, y: 0, z: 4}
-      rotation: {x: 0, y: 0, z: 0, w: 0}
+      position: {x: -1, y: 0, z: 2}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
     solution:
-      id: 2
+      id: 4
       axis: -1
       state: -1
+  clueDatas:
+  - prefab: {fileID: 5700895894569640368, guid: 5fa71d4a653bc074a9cb0e787e2f7a35, type: 3}
+    pose:
+      position: {x: -0.6, y: 0, z: 2}
+      rotation: {x: -0, y: -0, z: -0, w: 1}
+  - prefab: {fileID: 5700895894569640368, guid: 5fa71d4a653bc074a9cb0e787e2f7a35, type: 3}
+    pose:
+      position: {x: 0.4, y: 0, z: 2}
+      rotation: {x: -0, y: -0, z: -0, w: 1}

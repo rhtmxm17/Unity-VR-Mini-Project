@@ -84,6 +84,8 @@ public class StageEditor : MonoBehaviour
             stageData.clueDatas[i].prefab = PrefabUtility.GetCorrespondingObjectFromSource(cluesParent.GetChild(i).gameObject);
             stageData.clueDatas[i].pose = new Pose(cluesParent.GetChild(i).position, cluesParent.GetChild(i).rotation);
         }
+
+        EditorUtility.SetDirty(stageData);
     }
 
     [ContextMenu("Load Stage Data")]

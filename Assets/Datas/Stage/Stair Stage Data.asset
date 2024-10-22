@@ -12,6 +12,62 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f1f1872ce3af06640b1d23774b694673, type: 3}
   m_Name: Stair Stage Data
   m_EditorClassIdentifier: 
-  articleDatas: []
-  socketDatas: []
-  clueDatas: []
+  articleDatas:
+  - prefab: {fileID: 6513121771172317035, guid: 5174545c1d469e34a9acac5eaaa59892, type: 3}
+    pose:
+      position: {x: -0.36464489, y: 0.262, z: 0.08113706}
+      rotation: {x: 0.2585714, y: -0.37651214, z: -0.24037942, w: 0.85650283}
+  - prefab: {fileID: 6513121771172317035, guid: 5174545c1d469e34a9acac5eaaa59892, type: 3}
+    pose:
+      position: {x: 0.795809, y: 0.2, z: 0.12697268}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+  - prefab: {fileID: 6513121771172317035, guid: 5174545c1d469e34a9acac5eaaa59892, type: 3}
+    pose:
+      position: {x: -1.0995586, y: 0.2, z: 0.2689013}
+      rotation: {x: 0.7868388, y: -0.27851984, z: -0.52430964, w: 0.16855507}
+  - prefab: {fileID: 6513121771172317035, guid: 5174545c1d469e34a9acac5eaaa59892, type: 3}
+    pose:
+      position: {x: 0.40949792, y: 0.262, z: 0.33695424}
+      rotation: {x: 0.8479721, y: -0.35558394, z: -0.26535243, w: -0.28998536}
+  socketDatas:
+  - prefab: {fileID: -8092259525992577747, guid: 32cc43c7cc9081f4194870637784f01a, type: 3}
+    pose:
+      position: {x: 0.12, y: 0.25, z: 1}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+    solution:
+      id: -1
+      axis: 4
+      state: -1
+  - prefab: {fileID: -8092259525992577747, guid: 32cc43c7cc9081f4194870637784f01a, type: 3}
+    pose:
+      position: {x: -0.12, y: 0.2, z: 1}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+    solution:
+      id: -1
+      axis: 2
+      state: -1
+  - prefab: {fileID: -8092259525992577747, guid: 32cc43c7cc9081f4194870637784f01a, type: 3}
+    pose:
+      position: {x: -0.36, y: 0.15, z: 1}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+    solution:
+      id: -1
+      axis: 1
+      state: -1
+  - prefab: {fileID: -8092259525992577747, guid: 32cc43c7cc9081f4194870637784f01a, type: 3}
+    pose:
+      position: {x: 0.36, y: 0.3, z: 1}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+    solution:
+      id: -1
+      axis: 8
+      state: -1
+  clueDatas:
+  - prefab: {fileID: 6727073444203840825, guid: f08c5f8e15e0068468fa1a0e00523013, type: 3}
+    pose:
+      position: {x: -0.385, y: 0.055, z: 0.8722}
+      rotation: {x: 0.7071068, y: -0, z: -0, w: 0.7071068}
+  - prefab: {fileID: 2401312458168361827, guid: 399c38783fbb82d438ea4c6f53459b95, type: 3}
+    pose:
+      position: {x: 0, y: 0, z: 1}
+      rotation: {x: -0, y: -0, z: -0, w: 1}

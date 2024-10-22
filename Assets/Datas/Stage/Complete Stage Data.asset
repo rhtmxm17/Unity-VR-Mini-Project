@@ -12,6 +12,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f1f1872ce3af06640b1d23774b694673, type: 3}
   m_Name: Complete Stage Data
   m_EditorClassIdentifier: 
-  articleDatas: []
-  socketDatas: []
+  articleDatas:
+  - prefab: {fileID: 1627127896844827591, guid: 85210750ac7bbc748b4a1a410af4e77c, type: 3}
+    pose:
+      position: {x: 0, y: 0.5, z: 1.5}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+  socketDatas:
+  - prefab: {fileID: 5349958505089396494, guid: 497027fe579b75544ab67b83de62e704, type: 3}
+    pose:
+      position: {x: 0, y: 0, z: 0}
+      rotation: {x: 0, y: 0, z: 0, w: 0}
+    solution:
+      id: 0
+      axis: 0
+      state: 0
   clueDatas: []
