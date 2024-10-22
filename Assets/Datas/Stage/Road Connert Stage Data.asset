@@ -10,31 +10,31 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f1f1872ce3af06640b1d23774b694673, type: 3}
-  m_Name: ID Based Test Stage Data
+  m_Name: Road Connert Stage Data
   m_EditorClassIdentifier: 
   articleDatas:
-  - prefab: {fileID: 5253113257569709865, guid: e29d5532b74a05644be65e6d7359feb7, type: 3}
+  - prefab: {fileID: 8505988935184008798, guid: e2e10cfb24078da48919759fc9c95207, type: 3}
     pose:
-      position: {x: -1, y: 0, z: 2}
-      rotation: {x: 0, y: 0, z: 0, w: 1}
-  - prefab: {fileID: 1701156773660306021, guid: 49db46b88e5661e48a9d3f42bf398301, type: 3}
+      position: {x: 1, y: 0, z: 1}
+      rotation: {x: 0, y: 0.6087614, z: 0, w: 0.7933533}
+  - prefab: {fileID: 8505988935184008798, guid: e2e10cfb24078da48919759fc9c95207, type: 3}
     pose:
-      position: {x: 1, y: 0, z: 2}
-      rotation: {x: 0, y: 0, z: 0, w: 0}
+      position: {x: -1, y: 0, z: 1}
+      rotation: {x: 0, y: 0.1305262, z: 0, w: 0.9914449}
   socketDatas:
   - prefab: {fileID: 6086481593431913906, guid: 31771998eddcafc4dad03692fafaf100, type: 3}
     pose:
-      position: {x: -1, y: 0, z: 4}
-      rotation: {x: 0, y: 0, z: 0, w: 0}
+      position: {x: 0.5, y: 0, z: 3}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
     solution:
-      id: 1
-      axis: -1
+      id: -1
+      axis: 9
       state: -1
   - prefab: {fileID: 6086481593431913906, guid: 31771998eddcafc4dad03692fafaf100, type: 3}
     pose:
-      position: {x: 1, y: 0, z: 4}
-      rotation: {x: 0, y: 0, z: 0, w: 0}
+      position: {x: -0.5, y: 0, z: 3}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
     solution:
-      id: 2
-      axis: -1
+      id: -1
+      axis: 9
       state: -1
