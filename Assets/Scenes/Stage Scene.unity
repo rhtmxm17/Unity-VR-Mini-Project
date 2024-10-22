@@ -343,9 +343,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1364446942}
+  - component: {fileID: 1364446943}
   - component: {fileID: 1364446941}
   m_Layer: 0
-  m_Name: Stage
+  m_Name: Stage Scene Manager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -363,7 +364,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e4626572e5ef7d84fb115f0ec31572d8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  data: {fileID: 11400000, guid: a3ceaf5f82c51e146b0c7f8899c279ae, type: 2}
+  data: {fileID: 0}
   OnClear:
     m_PersistentCalls:
       m_Calls: []
@@ -382,6 +383,23 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1364446943
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1364446940}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8223ea9dc046b8744a1b524ab6d11552, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  stage: {fileID: 1364446941}
+  stageList:
+  - {fileID: 11400000, guid: a3ceaf5f82c51e146b0c7f8899c279ae, type: 2}
+  - {fileID: 11400000, guid: 7fd85059f6f63b042a046977a57d7bfa, type: 2}
+  - {fileID: 11400000, guid: 62336b750629ad540abca3acbcb84eb5, type: 2}
 --- !u!1001 &1490537302
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -455,7 +473,7 @@ GameObject:
   - component: {fileID: 1601855924}
   - component: {fileID: 1601855925}
   m_Layer: 0
-  m_Name: Plane
+  m_Name: Collider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

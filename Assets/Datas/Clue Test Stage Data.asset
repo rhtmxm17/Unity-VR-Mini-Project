@@ -12,6 +12,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f1f1872ce3af06640b1d23774b694673, type: 3}
   m_Name: Clue Test Stage Data
   m_EditorClassIdentifier: 
-  articleDatas: []
-  socketDatas: []
-  clueDatas: []
+  articleDatas:
+  - prefab: {fileID: 6513121771172317035, guid: 5174545c1d469e34a9acac5eaaa59892, type: 3}
+    pose:
+      position: {x: -0.2754959, y: 0.075, z: 0.29001522}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+  socketDatas:
+  - prefab: {fileID: -8092259525992577747, guid: 32cc43c7cc9081f4194870637784f01a, type: 3}
+    pose:
+      position: {x: 0.246, y: 0.075, z: 0.304}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+    solution:
+      id: -1
+      axis: 4
+      state: -1
+  clueDatas:
+  - prefab: {fileID: 1125181244151460, guid: 31934a5d29c16bc4cab25792d04131a9, type: 3}
+    pose:
+      position: {x: -0.012345593, y: -0.157, z: 1.039}
+      rotation: {x: -0, y: -0, z: -0, w: 1}

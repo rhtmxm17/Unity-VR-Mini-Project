@@ -70,11 +70,6 @@ public class Stage : MonoBehaviour
         }
     }
 
-    private void Start()
-    {
-        SetupStage();
-    }
-
     public void SetupStage()
     {
         if (data == null)
@@ -145,6 +140,25 @@ public class Stage : MonoBehaviour
         }
     }
 
+    public void ClearStageElements()
+    {
+        int hash = Animator.StringToHash("Disappear");
+        foreach (GameObject element in stageElements)
+        {
+            if (element.TryGetComponent(out Animator animator))
+            {
+                animator.SetTrigger(hash);
+                Destroy(element, 1.5f);
+            }
+            else
+            {
+                Destroy(element);
+            }
+        }
+
+        stageElements = null;
+    }
+
     private IEnumerator DelayedActivation(GameObject target, YieldInstruction delay)
     {
         yield return delay;
@@ -167,6 +181,7 @@ public class Stage : MonoBehaviour
         }
 
         Debug.Log("클리어 확인");
+        ClearStageElements();
         OnClear?.Invoke();
     }
 }
