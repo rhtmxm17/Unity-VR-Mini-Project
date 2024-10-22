@@ -39,6 +39,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Socket Dice d6
       objectReference: {fileID: 0}
+    - target: {fileID: 7010172065999603456, guid: fd0fff05091be224f84be48f49f26e01, type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7215664099190184677, guid: fd0fff05091be224f84be48f49f26e01, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -110,9 +114,9 @@ MonoBehaviour:
   - {x: 1, y: 0, z: 0}
   - {x: 0, y: -1, z: 0}
   - {x: 0, y: 0, z: -1}
---- !u!4 &7069886526732874364 stripped
+--- !u!4 &7455526974740197273 stripped
 Transform:
-  m_CorrespondingSourceObject: {fileID: 7215664099190184677, guid: fd0fff05091be224f84be48f49f26e01, type: 3}
+  m_CorrespondingSourceObject: {fileID: 7010172065999603456, guid: fd0fff05091be224f84be48f49f26e01, type: 3}
   m_PrefabInstance: {fileID: 449929031739943065}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1160131148825133729
@@ -120,7 +124,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    m_TransformParent: {fileID: 7069886526732874364}
+    m_TransformParent: {fileID: 7455526974740197273}
     m_Modifications:
     - target: {fileID: 5983368422492259723, guid: cc2e145304a0b1e44aa1567da9218354, type: 3}
       propertyPath: m_IsTrigger
@@ -132,7 +136,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7826123901338310084, guid: cc2e145304a0b1e44aa1567da9218354, type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7826123901338310084, guid: cc2e145304a0b1e44aa1567da9218354, type: 3}
       propertyPath: m_LocalScale.x
@@ -164,7 +168,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7826123901338310084, guid: cc2e145304a0b1e44aa1567da9218354, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 7826123901338310084, guid: cc2e145304a0b1e44aa1567da9218354, type: 3}
       propertyPath: m_LocalRotation.y

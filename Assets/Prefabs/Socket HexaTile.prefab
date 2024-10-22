@@ -5,7 +5,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    m_TransformParent: {fileID: 3275914119049926525}
+    m_TransformParent: {fileID: 2890308851455265432}
     m_Modifications:
     - target: {fileID: 1567869443710866, guid: b9c5ab851b762b74f8bcba314257140c, type: 3}
       propertyPath: m_Name
@@ -13,7 +13,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4956948875019876, guid: b9c5ab851b762b74f8bcba314257140c, type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4956948875019876, guid: b9c5ab851b762b74f8bcba314257140c, type: 3}
       propertyPath: m_LocalScale.x
@@ -148,6 +148,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Socket HexaTile
       objectReference: {fileID: 0}
+    - target: {fileID: 7010172065999603456, guid: fd0fff05091be224f84be48f49f26e01, type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7215664099190184677, guid: fd0fff05091be224f84be48f49f26e01, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -238,8 +242,8 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fd0fff05091be224f84be48f49f26e01, type: 3}
---- !u!4 &3275914119049926525 stripped
+--- !u!4 &2890308851455265432 stripped
 Transform:
-  m_CorrespondingSourceObject: {fileID: 7215664099190184677, guid: fd0fff05091be224f84be48f49f26e01, type: 3}
+  m_CorrespondingSourceObject: {fileID: 7010172065999603456, guid: fd0fff05091be224f84be48f49f26e01, type: 3}
   m_PrefabInstance: {fileID: 5284220776037043608}
   m_PrefabAsset: {fileID: 0}

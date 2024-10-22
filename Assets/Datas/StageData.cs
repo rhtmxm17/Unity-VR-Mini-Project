@@ -7,6 +7,7 @@ public class StageData : ScriptableObject
 {
     public ArticleData[] articleDatas;
     public SocketData[] socketDatas;
+    public ClueData[] clueDatas;
 
     [System.Serializable]
     public struct ArticleData
@@ -22,5 +23,12 @@ public class StageData : ScriptableObject
         public Pose pose;
 
         public Stage.SolutionSet solution;
+    }
+
+    [System.Serializable]
+    public struct ClueData
+    {
+        public GameObject prefab;
+        public Pose pose;
     }
 }

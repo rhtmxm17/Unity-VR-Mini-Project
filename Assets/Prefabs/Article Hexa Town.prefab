@@ -5,7 +5,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    m_TransformParent: {fileID: 1701156773660306016}
+    m_TransformParent: {fileID: 982990202203767595}
     m_Modifications:
     - target: {fileID: 1758621474890702, guid: 97a674fe99515b7419d2e12a90ee388f, type: 3}
       propertyPath: m_Name
@@ -128,10 +128,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6624353594089286782, guid: 1a1bd839d009574408f25d2cf410b286, type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1a1bd839d009574408f25d2cf410b286, type: 3}
---- !u!4 &1701156773660306016 stripped
+--- !u!4 &982990202203767595 stripped
 Transform:
-  m_CorrespondingSourceObject: {fileID: 4742746760630764853, guid: 1a1bd839d009574408f25d2cf410b286, type: 3}
+  m_CorrespondingSourceObject: {fileID: 6624353594089286782, guid: 1a1bd839d009574408f25d2cf410b286, type: 3}
   m_PrefabInstance: {fileID: 6217824147545632597}
   m_PrefabAsset: {fileID: 0}
