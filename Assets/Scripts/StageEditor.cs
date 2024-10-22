@@ -7,6 +7,7 @@ using UnityEngine;
 public class StageEditor : MonoBehaviour
 {
     public StageData stageData;
+    public Transform cluesParent;
 
     [ContextMenu("Save Stage Data")]
     public void SaveStageData()
@@ -29,17 +30,20 @@ public class StageEditor : MonoBehaviour
 
         stageData.articleDatas = new StageData.ArticleData[articles.Length];
         stageData.socketDatas = new StageData.SocketData[sockets.Length];
+        stageData.clueDatas = new StageData.ClueData[cluesParent.childCount];
 
+        // 기물 저장
         for (int i = 0; i < articles.Length; i++)
         {
             // 배열에 저장된 순서(인덱스)는 읽어올 때 id로 사용된다
-            stageData.articleDatas[i].prefab = PrefabUtility.GetCorrespondingObjectFromOriginalSource(articles[i]);
+            stageData.articleDatas[i].prefab = PrefabUtility.GetCorrespondingObjectFromSource(articles[i]);
             stageData.articleDatas[i].pose = new Pose(articles[i].transform.position, articles[i].transform.rotation);
         }
 
+        // 소켓 저장
         for (int i = 0; i < sockets.Length; i++)
         {
-            stageData.socketDatas[i].prefab = PrefabUtility.GetCorrespondingObjectFromOriginalSource(sockets[i]);
+            stageData.socketDatas[i].prefab = PrefabUtility.GetCorrespondingObjectFromSource(sockets[i]);
             stageData.socketDatas[i].pose = new Pose(sockets[i].transform.position, sockets[i].transform.rotation);
 
             SocketDataSetter dataSetter = sockets[i].GetComponent<SocketDataSetter>();
@@ -72,6 +76,13 @@ public class StageEditor : MonoBehaviour
                 axis = dataSetter.solutionAxis,
                 state = dataSetter.solutionState,
             };
+        }
+
+        // 맵 저장
+        for (int i = 0; i < cluesParent.childCount; i++)
+        {
+            stageData.clueDatas[i].prefab = PrefabUtility.GetCorrespondingObjectFromSource(cluesParent.GetChild(i).gameObject);
+            stageData.clueDatas[i].pose = new Pose(cluesParent.GetChild(i).position, cluesParent.GetChild(i).rotation);
         }
     }
 
@@ -121,6 +132,13 @@ public class StageEditor : MonoBehaviour
                     }
                 }
             }
+        }
+
+        // 맵 생성
+        for (int i = 0; i < stageData.clueDatas.Length; i++)
+        {
+            GameObject clue = (GameObject)PrefabUtility.InstantiatePrefab(stageData.clueDatas[i].prefab, cluesParent);
+            clue.transform.SetPositionAndRotation(stageData.clueDatas[i].pose.position, stageData.clueDatas[i].pose.rotation);
         }
     }
 
