@@ -1,7 +1,8 @@
+#if UNITY_EDITOR
 using System.Collections;
 using System.Collections.Generic;
-using UnityEditor;
 using UnityEngine;
+using UnityEditor;
 
 [ExecuteInEditMode] // 에디터 모드에서 라이프사이클 호출
 public class StageEditor : MonoBehaviour
@@ -86,6 +87,8 @@ public class StageEditor : MonoBehaviour
         }
 
         EditorUtility.SetDirty(stageData);
+        AssetDatabase.SaveAssets();
+        AssetDatabase.Refresh();
     }
 
     [ContextMenu("Load Stage Data")]
@@ -176,3 +179,4 @@ public class StageEditor : MonoBehaviour
         }
     }
 }
+#endif
