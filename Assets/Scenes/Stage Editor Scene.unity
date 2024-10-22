@@ -261,6 +261,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   stageData: {fileID: 0}
+  cluesParent: {fileID: 637828037}
 --- !u!1 &1295385119
 GameObject:
   m_ObjectHideFlags: 0

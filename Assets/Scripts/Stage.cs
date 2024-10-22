@@ -50,6 +50,7 @@ public class Stage : MonoBehaviour
     }
 
     private SocketAnswerChecker[] checkers;
+    private List<GameObject> stageElements;
 
     private class SocketAnswerChecker
     {
@@ -82,12 +83,28 @@ public class Stage : MonoBehaviour
             return;
         }
 
+        if (stageElements != null)
+        {
+            Debug.LogWarning("[Stage] 스테이지가 중복 생성된 것으로 예상됩니다.");
+        }
+
+        stageElements = new List<GameObject>(data.articleDatas.Length + data.socketDatas.Length + data.clueDatas.Length);
+        float directSpendingTime = 1.5f;
+
         // 기물 생성
         for (int i = 0; i < data.articleDatas.Length; i++)
         {
             var article = Instantiate(data.articleDatas[i].prefab, this.transform);
             article.transform.SetLocalPositionAndRotation(data.articleDatas[i].pose.position, data.articleDatas[i].pose.rotation);
             article.Id = i;
+
+            stageElements.Add(article.gameObject);
+
+            // 랜덤 딜레이 후 활성화(출현 연출)
+            article.gameObject.SetActive(false);
+            float directStartTime = Random.value * directSpendingTime;
+            StartCoroutine(DelayedActivation(article.gameObject, new WaitForSeconds(directStartTime)));
+            StartCoroutine(DelayedDelegate(article.OnStageInit, new WaitForSeconds(directStartTime + 1f)));
         }
 
         // 소켓 생성 및 정답 정보 입력
@@ -101,10 +118,43 @@ public class Stage : MonoBehaviour
             {
                 solution = data.socketDatas[i].solution,
             };
-
             socket.OnSelectedChanged += checkers[i].CheckAnswer;
             checkers[i].OnChecked += CheckClear;
+
+            stageElements.Add(socket.gameObject);
+
+            socket.gameObject.SetActive(false);
+            float directStartTime = Random.value * directSpendingTime;
+            StartCoroutine(DelayedActivation(socket.gameObject, new WaitForSeconds(directStartTime)));
         }
+
+        // 힌트 등 맵 요소 생성
+        for (int i = 0; i < data.clueDatas.Length; i++)
+        {
+            GameObject clue = Instantiate(data.clueDatas[i].prefab, this.transform);
+            clue.transform.SetLocalPositionAndRotation(data.clueDatas[i].pose.position, data.clueDatas[i].pose.rotation);
+
+            stageElements.Add(clue);
+
+            // 맵 요소의 경우 Animator가 존재하는지 검사
+            if (clue.TryGetComponent(out Animator _))
+            {
+                clue.SetActive(false);
+                StartCoroutine(DelayedActivation(clue, new WaitForSeconds(Random.value * directSpendingTime)));
+            }
+        }
+    }
+
+    private IEnumerator DelayedActivation(GameObject target, YieldInstruction delay)
+    {
+        yield return delay;
+        target.SetActive(true);
+    }
+
+    private IEnumerator DelayedDelegate(UnityAction action, YieldInstruction delay)
+    {
+        yield return delay;
+        action?.Invoke();
     }
 
     private void CheckClear()
